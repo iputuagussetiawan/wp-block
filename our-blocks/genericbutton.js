@@ -82,7 +82,7 @@ function EditComponent(props) {
                 allowedFormats={[]}
             />
             {isLinkPickerVisible && (
-                <Popover position="middle center">
+                <Popover position="middle center" onFocusOutside={() => setIsLinkPickerVisible(false)}>
                     <LinkControl settings={[]} value={props.attributes.linkObject} onChange={handleLinkChange} />
                     <Button variant="primary" onClick={() => setIsLinkPickerVisible(false)} style={{ display: "block", width: "100%" }}>
                         Confirm Link
